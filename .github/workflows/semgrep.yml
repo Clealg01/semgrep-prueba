@@ -18,8 +18,8 @@ jobs:
       - name: Instalar Semgrep
         run: pip install semgrep
 
-      - name: Ejecutar análisis
-        run: semgrep --config=auto --json --output=semgrep-results.json
+      - name: Ejecutar análisis con reglas personalizadas
+        run: semgrep --config=files/custom-rules.yaml --json --output=semgrep-results.json
 
       - name: Mostrar resultados
         run: cat semgrep-results.json
